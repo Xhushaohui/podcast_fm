@@ -6,12 +6,12 @@
 			<nav>
 				<ul>
 					<% unless podcast_signed_in? %>			
-						<li><a href="#">Explore</a></li>
+						<li><%= link_to "Explore", podcasts_path %></li>
 						<li><%= link_to "Sign In", new_podcast_session_path %></li>
 						<li><%= link_to "Create a Scenario", new_podcast_registration_path %></li>
 					<% else %>
 						<li><a href="#">Dashboard</a></li>
-					  <li><a href="#">Explore</a></li>
+					  <li><%= link_to "Explore", podcasts_path %></li>
 						<li><%= link_to "Sign Out", destroy_podcast_session_path, method: :delete %></li>
 					<% end %>
 				</ul>
@@ -22,7 +22,8 @@
 			 	<h1>Discover your new favorite VR Scenario <br> or creat your own.</h1>
 			 	<%= link_to "Create a Scenario", new_podcast_registration_path, class: "button button_highlight" %>
 
-				<a href="#" class="button button_white">Explore</a>
+				<%= link_to "Explore", podcasts_path ,class: "button button_white" %>
+
 		 </div>
 
 	</div>
