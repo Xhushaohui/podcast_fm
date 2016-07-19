@@ -19,29 +19,41 @@
 		<%= link_to podcasts_path do %>
 				All Podcast
 				<span>/</span>
-				The Rocketship Podcast
+				<%= link_to @podcast.title, podcast_path(@podcast) %>
+				<span>/</span>
+				<%= link_to @episode.title, podcast_episode_path(@podcast, @episode) %>
 		<% end %>
 		</div>
 		
+		<div id="episode_content">
+		 	<div class="wrapper_skinny">
+		 			<img src="images/podcast1.jpg" alt="" class="current_episode_thumbnail">
+		 			<h2><%= @episode.title %></h2>	
+						<p class="description">
+							<%= @episode.description %>
+						</p>
+		 	</div>
+		</div>
+
+
 		<div id="episodes">
 			<div class="wrapper_skinny">
-
 				<ul class="cf">
-					<% @episodes.each do |episode| %>
-						<li class="cf">
-							<div class="episode_thumbnail">
-								<a href="#">
-									<img src="images/podcast1.jpg" alt="">
-								</a>
-							</div>
-							<div class="episode_overview">
-								<h2><%= link_to episode.title, podcast_episode_path(@podcast, episode) %></h2>
-								<p class="description">
-									<%= truncate(episode.description, length: 140) %>
-								</p>
-							</div>
-						</li>
-					<% end %>
+				<% @episodes.each do |episode| %>
+					<li class="cf">
+						<div class="episode_thumbnail">
+							<a href="episode.html">
+								<img src="images/podcast1.jpg" alt="">
+							</a>
+						</div>
+						<div class="episode_overview">
+							<h2><%= link_to episode.title, podcast_episode_path(@podcast, episode) %></h2>
+							<p class="description">
+								<%= truncate(episode.description, length: 140) %>
+							</p>
+						</div>
+					</li>
+				<% end %>
 
 				</ur>
 			</div>
