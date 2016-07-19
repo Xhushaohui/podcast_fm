@@ -5,16 +5,23 @@
 			<a href="#" id="logo">SRT VRLAB</a>
 			<nav>
 				<ul>
-					<li><a href="#">Explore</a></li>
-					<li><a href="#">Sign in</a></li>
-					<li><a href="#">Creat a VR Scenario</a></li>
+					<% unless podcast_signed_in? %>			
+						<li><a href="#">Explore</a></li>
+						<li><%= link_to "Sign In", new_podcast_session_path %></li>
+						<li><%= link_to "Create a Scenario", new_podcast_registration_path %></li>
+					<% else %>
+						<li><a href="#">Dashboard</a></li>
+					  <li><a href="#">Explore</a></li>
+						<li><%= link_to "Sign Out", destroy_podcast_session_path, method: :delete %></li>
+					<% end %>
 				</ul>
 			</nav>
 		</div>
 		</header>
 		 <div class="wrapper_skinny">
 			 	<h1>Discover your new favorite VR Scenario <br> or creat your own.</h1>
-				<a href="#" class="button button_highlight">Creat a Scenario</a>
+			 	<%= link_to "Create a Scenario", new_podcast_registration_path, class: "button button_highlight" %>
+
 				<a href="#" class="button button_white">Explore</a>
 		 </div>
 
