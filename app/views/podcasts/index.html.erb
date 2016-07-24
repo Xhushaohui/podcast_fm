@@ -12,8 +12,9 @@
 							
 							<div class="podcast_overview">
 								<h2><%= podcast.title %></h2>
-
-								<p class="episode_count"><%= @podcasts.count %> Episode</p>
+								<% @episodes_count = Episode.where(podcast_id: podcast) %>
+								<p class="episode_count"><%= @episodes_count.count %> Episodes</p>
+								
 							</div>
 						</li>
 					<% end %>
