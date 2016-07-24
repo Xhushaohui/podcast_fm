@@ -12,7 +12,8 @@
 							
 							<div class="podcast_overview">
 								<h2><%= podcast.title %></h2>
-								<p class="episode_count">1 Episode</p>
+
+								<p class="episode_count"><%= @podcasts.count %> Episode</p>
 							</div>
 						</li>
 					<% end %>
