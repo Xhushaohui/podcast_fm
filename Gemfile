@@ -12,7 +12,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 
 gem 'turbolinks'
-
+gem 'font-awesome-sass'
 gem 'jbuilder', '~> 2.0'
 gem 'aws-sdk', '~> 2.4', '>= 2.4.2'
 gem 'sdoc', '~> 0.4.0', group: :doc
