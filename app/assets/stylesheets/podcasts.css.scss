@@ -136,6 +136,11 @@
 							text-decoration: none;
 						}
 					}
+					.btn_link{
+						&:hover {
+						color: $highlight;
+						}
+					}
 				}
 			}
 	}

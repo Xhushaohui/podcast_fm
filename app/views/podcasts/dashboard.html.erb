@@ -32,8 +32,8 @@
               <h2><%= link_to episode.title, podcast_episode_path(@podcast,episode) %>
               <p class="description"><%= truncate(episode.description, length: 160) %></p>
               <div class="authorized_link">
-              <%= link_to "Edit", edit_podcast_episode_path(@podcast,episode) %>
-              <%= link_to "Delete", podcast_episode_path(@podcast,episode), method: :Delete, data: {confirm: "Are you sure?"} %>
+              <%= link_to "Edit", edit_podcast_episode_path(@podcast,episode), class: "btn_link" %>
+              <%= link_to "Delete", podcast_episode_path(@podcast,episode), method: :Delete, data: {confirm: "Are you sure?"}, class: "btn_link" %>
   
               </div>
             </div>
